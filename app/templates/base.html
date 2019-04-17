@@ -12,6 +12,9 @@
 
     <body>
         {% extends 'bootstrap/base.html' %}
+        {% block navbar %}
+            {% includes 'navbar.html' %}
+        {% endblock %}
         <!--Content block-->
 
         {% block content %}

@@ -16,7 +16,25 @@
                     <li>{{movie.title}}</li>
                 {% endfor %}
             </ul>
-        
+
+        <!--Upcoming movie section-->
+        <h3>Popular Movies</h3>
+        <ul>
+            {% for movie in upcoming %}
+                <li>{{movie.title}}</li>
+            {% endfor %}
+        </ul>
+
+        <!--Upcoming movie section-->
+        <h3>Popular Movies</h3>
+        <ul>
+            {% for movie in now %}
+                <li>{{movie.title}}</li>
+            {% endfor %}
+        </ul>
+
+
+
     </body>
 
 </html>

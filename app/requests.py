@@ -11,5 +11,5 @@ def get_movie(category):
 
     if response.status_code == 200:
         data = response.json()
-        return data
+        return data["results"]
 

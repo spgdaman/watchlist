@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }}</title>
+        {% else %}
+        <title>Welcome to the best Movie Review Website</title>
+        {% endif%}
+    </head>
+
+    {% import 'macros.html' as macro %}
+
+    <body>
+        
+        <!--Content block-->
+
+        {% block content %}
+
+        {% endblock %}
+
+    </body>
+</html>

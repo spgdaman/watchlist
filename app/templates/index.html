@@ -8,30 +8,27 @@
         {% endif%}
     </head>
 
+    {% import 'macros.html' as macro %}
+
     <body>
+        
         <!--Popular movie section-->
         <h3>Popular Movies</h3>
             <ul>
-                {% for movie in popular %}
-                    <li>{{movie.title}}</li>
-                {% endfor %}
+                {{ macro.displayMovie(popular) }}
             </ul>
 
         <!--Upcoming movie section-->
         <h3>Popular Movies</h3>
-        <ul>
-            {% for movie in upcoming %}
-                <li>{{movie.title}}</li>
-            {% endfor %}
-        </ul>
+            <ul>
+                {{ macro.displayMovie(upcoming) }}
+            </ul>
 
         <!--Upcoming movie section-->
         <h3>Popular Movies</h3>
-        <ul>
-            {% for movie in now %}
-                <li>{{movie.title}}</li>
-            {% endfor %}
-        </ul>
+            <ul>
+                {{ macro.displayMovie(now) }}
+            </ul>
 
 
 

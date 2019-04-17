@@ -9,6 +9,13 @@
     </head>
 
     <body>
+        <!--Popular movie section-->
+        <h3>Popular Movies</h3>
+            <ul>
+                {% for movie in popular %}
+                    <li>{{movie.title}}</li>
+                {% endfor %}
+            </ul>
         
     </body>
 

@@ -14,5 +14,5 @@ def index():
 @app.route('/movie/<int:movie_id>')
 def movie(movie_id):
     movie = show_movie(movie_id)
-    title = f'{movie.original_title}'
+    title = movie.get("original_title")
     return render_template('movie.html', title=title, movie=movie)

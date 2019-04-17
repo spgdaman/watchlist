@@ -21,3 +21,12 @@ def show_movie(id):
     if response.status_code == 200:
         data = response.json()
         return data
+
+def search_movie(movie_name):
+    api_url = 'https://api.themoviedb.org/3/search/movie?api_key={}&query={}'.format(apikey,movie_name)
+
+    response = requests.get(api_url)
+
+    if response.status_code == 200:
+        data = response.json()
+        return data

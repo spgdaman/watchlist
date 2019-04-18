@@ -10,22 +10,40 @@
 <!--Content block-->
 {% block content %}
 
+<div class="container">
+
+<!--Search form-->
+<div class="container">
+    <form>
+        <input type="text" name="movie_query" placeholder="Search for a Movie" class="form-control">
+        <input type="submit"  value="Submit" class="btn btn-primary">
+    </form>
+</div>
+
 <!--Popular movie section-->
 <h3>Popular Movies</h3>
-    <ul>
-        {{ macro.displayMovie(popular) }}
-    </ul>
+    <div class="row">
+        <ul>
+            {{ macro.displayMovie(popular) }}
+        </ul>
+    </div>
 
 <!--Upcoming movie section-->
 <h3>Upcoming Movies</h3>
-    <ul>
-        {{ macro.displayMovie(upcoming) }}
-    </ul>
+    <div class="row">
+        <ul>
+            {{ macro.displayMovie(upcoming) }}
+        </ul>
+    </div>
 
 <!--Upcoming movie section-->
 <h3>Now Showing Movies</h3>
-    <ul>
-        {{ macro.displayMovie(now) }}
-    </ul>
+    <div class="row">
+        <ul>
+            {{ macro.displayMovie(now) }}
+        </ul>
+    </div>
+
+</div>
 
 {% endblock %}

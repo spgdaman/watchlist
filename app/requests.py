@@ -11,26 +11,26 @@ api_key = app.config['MOVIE_API_KEY']
 def get_movie(category):
     api_url = 'https://api.themoviedb.org/3/movie/{}?api_key={}'.format(category,api_key)
 
-    response = requests.get(api_url)
+    # response = requests.get(api_url)
 
-    data = response.json()
-    dict_list = data["results"]    
+    # data = response.json()
+    # dict_list = data["results"]    
     
-    results = process_results(dict_list)    
+    # results = process_results(dict_list)    
 
-    return results
+    # return results
 
-    # with urllib.request.urlopen(api_url) as url:
-    #     get_movies_data = url.read()
-    #     get_movies_response = json.loads(get_movies_data)
+    with urllib.request.urlopen(api_url) as url:
+        get_movies_data = url.read()
+        get_movies_response = json.loads(get_movies_data)
 
-    #     movie_results = None
+        movie_results = None
 
-    #     if get_movies_response['results']:
-    #         movie_results_list = get_movies_response['results']
-    #         movie_results = process_results(movie_results_list)
+        if get_movies_response["results"]:
+            movie_results_list = get_movies_response['results']
+            movie_results = process_results(movie_results_list)
 
-    # return movie_results
+    return movie_results
 
 def show_movie(id):
     api_url = 'https://api.themoviedb.org/3/movie/{}?api_key={}'.format(id,api_key)

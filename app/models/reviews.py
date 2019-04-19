@@ -8,8 +8,18 @@ class Review:
         self.review = review
 
     def save_review(self):
-        self.all_reviews.append(self)
+        Review.all_reviews.append(self)
 
     @classmethod
     def clear_reviews(cls):
-        cls.all_reviews.clear()
+        Review.all_reviews.clear()
+
+    @classmethod
+    def get_reviews(cls,id):
+        response = []
+
+        for review in cls.all_reviews:
+            if review.movie_id == id:
+                response.append(review)
+
+        return response

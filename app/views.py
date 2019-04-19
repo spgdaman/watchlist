@@ -27,7 +27,7 @@ def movie(movie_id):
     title = f'{movie.title}'
     reviews = Review.get_reviews(movie.id)
 
-    return render_template('movie.html', title=title, movie=movie)
+    return render_template('movie.html', title=title, movie=movie, reviews=reviews)
 
 @app.route('/search/<string:movie_name>')
 def search(movie_name):
@@ -39,7 +39,7 @@ def search(movie_name):
 
 @app.route('/movie/review/new/<int:id>', methods = ['GET', 'POST'])
 def new_review(id):
-    form = ReviewForm
+    form = ReviewForm()
     movie = show_movie(id)
 
     if form.validate_on_submit():
@@ -47,7 +47,7 @@ def new_review(id):
         review = form.review.data
         new_review = Review(movie.id,title,movie.poster,review)
         new_review.save_review()
-        return redirect(url_for('movie',id=movie.id))
+        return redirect(url_for('movie',movie_id=movie.id))
 
     title = f'{movie.title} review'
     return render_template('new_review.html', title=title, review_form=form, movie=movie)
